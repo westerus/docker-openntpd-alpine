@@ -15,6 +15,8 @@ RUN $PKGUPDATE && \
     $PKGINSTALL openntpd && \
     $DELTEMP
 
+COPY ntpd.conf /etc/
+
 EXPOSE "123/udp"
 
 CMD ["ntpd", "-d"]
